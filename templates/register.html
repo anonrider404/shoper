@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Signup | lovelinkup</title>
+</head>
+
+<body>
+    <div class="container log">
+        <div class="logbox">
+            <img src="{% static 'img/login.jpeg' %}" class="signupimg">
+            <h1><i class="fa fa-user" aria-hidden="true"> </i> Signup LoveLinkUp</h1>
+            {% if form.errors.username %}
+            <p>{{form.errors.username | join:","}}</p>
+            {% endif %}
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="username" name="{{ form.username.name }}" placeholder="Username">
+                <input type="email" name="{{ form.email.name }}" placeholder="Email">
+                <input type="password" name="{{ form.password.name }}" placeholder="Password">
+                <button type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i> just signup</button>
+            </form>
+            <div class="controls">
+                <p>Dont have an account ?</p>
+                <a href="{% url 'login' %}" class="link">Register</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

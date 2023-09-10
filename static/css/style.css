@@ -1,0 +1,609 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    background-color: rgb(11, 11, 21);
+}
+.errorlist{
+    display: none;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 999;
+    background-color: rgb(11, 11, 21);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 65px;
+    box-shadow: rgba(141, 41, 248, 0.491) 0px 8px 24px;
+}
+.navbar .menu{
+    display: flex;
+}
+.menu li{
+    padding: 5px 15px;
+    margin: 5px;
+    list-style: none;
+    border-radius: 10px;
+}
+.menu li a{
+    text-decoration: none;
+    color:#fff;
+    transition: 0.2s;
+
+}
+.menu li a i{
+    padding: 5px 5px;
+}
+.menu, .logo{
+    margin: 30px;
+}
+.logo i{
+    color: rgb(228, 75, 195);
+    padding: 5px 5px;
+}
+.logo{
+    font-size: 25px;
+    color: #fff;
+    font-family: cursive;
+}
+.logo span{
+    color: rgb(92, 234, 94);
+}
+.navbar .menu .btn{
+    transition: 0.2s;
+    background: linear-gradient(to left, rgb(102, 232, 136), rgb(27, 178, 135));
+}
+.navbar .menu .btn a{
+    color: black;
+    transition: 0.2s;
+}
+.navbar .menu .btn:hover{
+    background: linear-gradient(to left, rgb(223, 102, 232), rgb(100, 27, 178));
+}
+.navbar .menu .btn a:hover{
+    color: white;
+}
+
+.menu li a:hover{
+    color: rgb(92, 234, 94);
+}
+.search input{
+    padding: 10px 20px;
+    border-width:3px;
+    border-color: rgba(47, 209, 96, 0.313);
+    border-style: ridge;
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+}
+.search input:focus{
+    outline: none;
+}
+.search::placeholder{
+    color: rgb(92, 234, 94);
+}
+.search button{
+    padding: 8px 20px;
+    background-color: rgb(208, 239, 208);
+    color: black;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+.search button:hover{
+    background-color: #fff;
+}
+.container{
+    min-height: 70vh;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.container-my{
+    min-height: 0;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.container .nogls{
+    background: linear-gradient(to left, rgb(102, 232, 136), rgb(27, 178, 135));
+    font-family: cursive;
+    font-weight: lighter;
+    color: black;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+.card{
+    width: 25%;
+    display: flex;
+    margin: 50px 0px;
+    box-shadow: rgba(118, 51, 252, 0.55) 0px 8px 24px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 10px;
+    background: linear-gradient(to right, rgba(237, 234, 63, 0.1), rgba(214, 30, 6, 0.1));
+    padding: 30px 5px;
+}
+.card h2{
+    font-family: cursive;
+    margin-top: 15px;
+}
+.card h3{
+    background: linear-gradient(to left, rgb(223, 102, 232), rgb(100, 27, 178));
+    font-family: cursive;
+    font-weight: lighter;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin: 10px;
+}
+.card p{
+    width: 80%;
+    color: rgb(143, 142, 142);
+    text-align: center;
+    margin: 10px;
+    font-family: sans-serif;
+}
+.card img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-top: -60px;
+}
+.card a{
+    background: linear-gradient(to left, rgb(102, 232, 136), rgb(27, 178, 135));
+    padding: 10px 35px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.close{
+    display: none;
+}
+.mobile{
+    display: none;
+}
+.myhead{
+    height: 65px;
+    margin: 30px;
+    margin-top: 90px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+    display: flex;
+}
+.myhead h3{
+    font-size: 25px;
+    color: #fff;
+}
+.myhead .add{
+    padding: 10px 15px;
+    background: linear-gradient(to left, rgb(102, 232, 136), rgb(27, 178, 135));
+    text-decoration: none;
+    color: black;
+}
+.myhead p {
+    font-family: sans-serif;
+    background: linear-gradient(to right, rgb(223, 102, 232), rgb(100, 27, 178));
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+.logbox{
+    box-shadow: rgba(141, 41, 248, 0.491) 0px 8px 24px;
+    width: 30%;
+    min-height: 60vh;
+    padding: 20px;
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    align-items: center;
+    font-family: cursive;
+}
+.logbox img{
+    width: 200px;
+    height: 200px;
+    box-shadow: rgba(141, 41, 248, 0.491) 0px 8px 24px;
+    border-radius: 50%;
+    margin: 30px;
+    margin-top: -60px;
+}
+.log{
+    min-height: 90vh;
+}
+.logbox form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.logbox h1{
+    margin: 20px;
+    font-family: cursive;
+}
+.logbox form input{
+    width: 80%;
+    height: 30px;
+    border: none;
+    border-color: transparent;
+    padding: 10px 15px;
+    margin: 15px;
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 17px;
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: rgba(141, 41, 248, 0.491) 0px 8px 24px;
+
+}
+.logbox form input:focus{
+    outline: none;
+}
+.logbox form button{
+    padding: 10px 35px;
+    background: linear-gradient(to right, rgb(223, 102, 232), rgb(100, 27, 178));
+    color: #fff;
+    font-family: cursive;
+    font-weight: bold;
+    transition: 0.2s;
+    border-radius: 15px;
+    margin: 30px;
+    font-size: 18px;
+}
+.logbox form button:hover{
+    background: linear-gradient(to left, rgb(102, 232, 136), rgb(27, 178, 135));
+    color: black;
+}
+.controls{
+    margin: 10px;
+    width: 90%;
+    padding: 5px;
+    justify-content: space-between;
+    align-items:center;
+    display: flex;
+}
+.controls p{
+    color: rgb(45, 184, 230);
+    font-size: 16px;
+    font-family: sans-serif;
+}
+.link{
+    background: linear-gradient(to left, rgb(102, 232, 136), rgb(27, 178, 135));
+    padding: 5px 10px;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+}
+.box-view{
+    width: 70%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: rgba(141, 41, 248, 0.491) 0px 8px 24px;
+}
+.box-view .pic{
+    width: 50%;
+    background: linear-gradient(to left, rgba(51, 66, 233, 0.050), rgba(57, 216, 39, 0.050));
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.box-view .pic img{
+    width: 300px;
+    height: 300px;
+    box-shadow: rgba(216, 54, 25, 0.62) 0px 8px 24px;
+    border-radius: 50%;
+}
+.box-view .pic h3{
+    font-family: sans-serif;
+    background: linear-gradient(to right, rgb(102, 197, 232), rgb(27, 178, 95));
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+.box-view .pic h2{
+    color: #fff;
+    margin: 30px;
+    font-size: 90%;
+    font-family: cursive;
+}
+.box-view .info{
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: cursive;
+    justify-content: center;
+}
+.box-view .info h2{
+    font-family: sans-serif;
+    color: #fff;
+    font-weight: bold;
+    font-size: 90%;
+    padding: 10px;
+    border-radius: 30px;
+    background: linear-gradient(to right, rgb(223, 102, 232), rgb(100, 27, 178));
+    margin-top: 20px;
+}
+.box-view .info p{
+    width: 80%;
+    font-size: 15px;
+    font-family: sans-serif;
+    margin: 30px;
+    text-align: center;
+}
+.box-view .info .btn{
+    font-family: sans-serif;
+    color: #fff;
+    font-weight: bold;
+    font-size: 90%;
+    padding: 15px 35px;
+    border-radius: 30px;
+    background: linear-gradient(to left, rgb(226, 49, 96), rgb(200, 56, 222));
+    margin-top: 20px;
+    text-decoration: none;
+}
+.logbox .smallimg{
+    width: 150px;
+    height: 150px;
+}
+.logbox textarea{
+    width: 80%;
+    padding: 10px;
+    background-color: transparent;
+    box-shadow: rgba(141, 41, 248, 0.491) 0px 8px 24px;
+    font-size: 18px;
+    color: #fff;
+    outline: none;
+    border: none;
+}
+.green{
+    background: linear-gradient(to left, rgb(226, 49, 96), rgb(200, 56, 222));
+}
+.del{
+    padding: 30px;
+    box-shadow: rgba(141, 41, 248, 0.491) 0px 8px 24px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 80%;
+
+}
+.del form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.del form button,.del form a{
+    margin: 10px;
+}
+.del form button{
+    font-family: sans-serif;
+    color: #fff;
+    font-weight: bold;
+    font-size: 90%;
+    padding: 15px 35px;
+    border-radius: 30px;
+    background: linear-gradient(to left, rgb(226, 49, 96), rgb(200, 56, 222));
+    margin-top: 20px;
+    text-decoration: none;
+}
+.del form a{
+    padding: 12px 35px;
+    background-color: #fbf8f8;
+    color: black;
+    text-decoration: none;
+    border: 0;
+    border-radius: 30px;
+    
+}
+.delete{
+    background: linear-gradient(to left, rgb(226, 49, 96), rgb(200, 56, 222));
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+.goback{
+    padding: 15px 25px;
+    background: linear-gradient(to left, rgb(226, 49, 96), rgb(200, 56, 222));
+    color: #fff;
+    position: fixed;
+    top: 5%;
+    border-radius: 50%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius:0 ;
+}
+.goback a{
+    text-decoration: none;
+    color: #fff;
+}
+@media(max-width:800px) {
+    .mobile{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        z-index: 100;
+        background-color: rgb(11, 11, 21);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 65px;
+        box-shadow: rgba(141, 41, 248, 0.491) 0px 8px 24px;
+        }
+    .card{
+        width: 80%;
+    }
+    .myhead h3{
+        display: none;
+    }
+    .navbar{
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.3s;
+        justify-content: center;
+        margin-top: -1200px;
+    }
+    .navbar .search{
+        display: none;
+    }
+    .search input{
+        width: 60px;
+    }
+    .show{
+        margin-top: 0px;
+    }
+
+    .menu{
+        flex-direction: column;
+    }
+    .menu li{
+        margin: 10px;
+    }
+    .logo{
+        font-size: 95%;
+    }
+
+    .close{
+        display: block;
+        position: absolute;
+        left: 87%;
+        top: 3%;
+        color: rgb(102, 232, 136);
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .bars{
+        cursor: pointer;
+        color: rgb(102, 232, 136);
+        font-size: 30px;
+        margin: 20px;
+    }
+    .myhead .add{
+        font-size: 90%;
+        border-radius: 30px;
+    }
+    .myhead{
+        padding: 0px 2px;
+    }
+    .logbox{
+        width: 80%;
+        padding: 0px 20px;
+    }
+    .log{
+        min-height: 100vh;
+    }
+    .logbox h1{
+        width: 100%;
+    }
+    .box-view{
+        flex-direction: column;
+        min-height: 90vh;
+        width:95% ;
+    }
+    .box-view .pic{
+        height: auto;
+        background-color: transparent;
+    }
+    .box-view .pic img{
+        width: 200px;
+        height: 200px;
+    }
+    .box-view .info{
+        height: 60%;
+    }
+    .box-view .info p{
+        width: 150%;
+    }
+
+    .box-view .pic h2, .pic h3{
+        display: none;
+    }
+
+}
+@media(max-width:400px) {
+    .mobile .logo{
+        font-size: 85%;
+        margin: 20px;
+    }
+    .search input{
+        margin: 0;
+        width: 40px;
+    }
+    .bars{
+        font-size: 25px;
+    }
+    .myhead .add{
+        font-size: 90%;
+        border-radius: 30px;
+    }
+    .myhead{
+        padding: 0px 2px;
+    }
+}
+
+@media(max-height:800px) {
+    .logbox img{
+        width: 150px;
+        height: 150px;
+    }
+    .logbox h1{
+        font-size: 25px;
+        width: 100%;
+    }
+}
+@media(max-height:750px) {
+    .signupimg{
+        margin-top: -10px;
+        width: 75px;
+        height: 75px;
+    }
+    .logbox form input{
+        padding: 10px;
+    }
+
+}
+@media(max-height:400px) {
+    .logbox h1{
+        font-size: 20px;
+        display: none;
+    }
+}
+.delete{
+    background: linear-gradient(to left, rgb(226, 49, 96), rgb(200, 56, 222));
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
