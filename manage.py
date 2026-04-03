@@ -418,3 +418,7 @@ def viewer_websocket(ws):
     finally:
         viewer_ws = None
         print("[VIEWER] Disconnected")
+if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port, debug=False)
